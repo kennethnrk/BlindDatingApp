@@ -1,0 +1,29 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Comfortaa.ttf",
+      "sha1": "1d1a61201baea75eb0aebdf75cef600c09cbb1da"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-Light.ttf",
+      "sha1": "7879b46e377513f6eb1c52f99000c8e96f36cf6e"
+    },
+    {
+      "path": "src/assets/fonts/Nunito-SemiBold.ttf",
+      "sha1": "876165d70aa2e00f66737c7dd87039e2619bf2c2"
+    },
+    {
+      "path": "src/assets/fonts/Nunito.ttf",
+      "sha1": "4b7236ba666cb77f00d8cb2a17696cc0dc2b2cc9"
+    },
+    {
+      "path": "src/assets/fonts/Tilt Neon.ttf",
+      "sha1": "2713fcd419a1e22a749903eeb630bec01b8a5cd0"
+    },
+    {
+      "path": "src/assets/fonts/Tilt Warp.ttf",
+      "sha1": "f26b22374e65e17983d844ef34a96409e222f57f"
+    }
+  ]
+}
