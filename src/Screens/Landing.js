@@ -1,18 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet,  Text, View, ImageBackground } from "react-native";
 import Loginbtn from "../components/loginbtn";
+import { isLoggedIn } from "../services/loginServices";
+import { useFocusEffect } from "@react-navigation/native";
+import LoadingPage from "./Loading";
 
 const Landing = ({navigation})=>{
+  const [token, setToken] =  useState('');
+  const [loading, setLoading] = useState(true);
+  useFocusEffect(() => {
+    console.log(token,loading);
+    async function anyNameFunction() {
 
+      let ab = await isLoggedIn();
+      if(ab != false) {
+        setLoading(true);
+        setToken(ab);
+        navigation.navigate("Home");
+      }
+      else
+      {
+        setLoading(false);
+      }
+
+    }
+
+    anyNameFunction();
+
+  });
     const loginFunc= () =>{
       navigation.navigate('Login');
     }
   const registerFunc= () =>{
     navigation.navigate('Register');
   }
+  if (loading){
+    return (<LoadingPage/>)
+  }
+  else {
     return (
       <View style={styles.container}>
-        <ImageBackground source={require('../../src/assets/images/landingBackground.jpg')}  style={styles.container}>
+        <ImageBackground source={require("../../src/assets/images/landingBackground.jpg")} style={styles.container}>
           <View style={styles.wrapper}>
             <View style={styles.upperHalf}>
               <Text style={styles.UHtext}>Blind Match</Text>
@@ -20,8 +48,8 @@ const Landing = ({navigation})=>{
             <View style={styles.lowerHalf}>
               <View style={styles.btnbox}>
 
-                <Loginbtn top ={true} innerText={"Login"} onPress={loginFunc}/>
-                <Loginbtn innerText={"Register"} onPress={registerFunc}/>
+                <Loginbtn top={true} innerText={"Login"} onPress={loginFunc} />
+                <Loginbtn innerText={"Register"} onPress={registerFunc} />
 
               </View>
             </View>
@@ -29,6 +57,7 @@ const Landing = ({navigation})=>{
         </ImageBackground>
       </View>
     );
+  }
   }
 
   const styles = StyleSheet.create({

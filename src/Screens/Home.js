@@ -6,9 +6,14 @@ import Chat from "./Chat";
 import Match from "./Match";
 import Icons from "react-native-vector-icons/FontAwesome5";
 
+import {useNavigation} from '@react-navigation/native';
+
+
+
 const Tab = createMaterialBottomTabNavigator();
 
 function Home() {
+
   return (
     <Tab.Navigator  activeColor="#ffffff"  labeled={false} barStyle={{ backgroundColor: '#10215e', margin:0, padding:0}}  >
       <Tab.Screen options={{

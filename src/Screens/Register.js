@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, ImageBackground, ScrollView, Alert } from "reac
 import Loginbtn from "../components/loginbtn";
 import Inputbox from "../components/inputbox";
 
+import { register as registerAPI } from "../apicalls/users";
 
 
 const Register = ({navigation})=>{
@@ -52,7 +53,8 @@ const Register = ({navigation})=>{
 
     const [state, dispatch] = useReducer(reducer, { name: '' , password: '', passwordAgain:'', age: 0, email:'', phone: 0});
 
-  const submit = () =>{
+  const submit = async () =>{
+
     if(state.password !== state.passwordAgain){
       Alert.alert('Warning', "Passwords don't Match!");
     }
@@ -81,6 +83,22 @@ const Register = ({navigation})=>{
       ))) {
       Alert.alert('Warning', "Please enter a valid mobile no!");
     }
+    else{
+      navigation.navigate("Home")
+      const name = state.name;
+      const email = state.email;
+      const password = state.password;
+      const phoneno = state.phone;
+      // const response = await registerAPI({
+      //   name,
+      //   email,
+      //   password,
+      //   phoneno
+      // });
+      // if(await response.success){
+      //   console.log(response)
+      // }
+    }
 
 
   }
@@ -101,9 +119,9 @@ const Register = ({navigation})=>{
           <Text style={styles.labelText}>Phone Number</Text>
           <Inputbox placeholder={"Phone No"} inputMode={'numeric'} onChangeText={(text) => {updatePhone(text)}} />
           <Text style={styles.labelText}>Password</Text>
-          <Inputbox  placeholder={"Password"}  onChangeText={(text) => {updatePassword(text)}} />
+          <Inputbox  placeholder={"Password"}  onChangeText={(text) => {updatePassword(text)}} secureTextEntry={true}/>
           <Text style={styles.labelText}>Confirm Password</Text>
-          <Inputbox placeholder={"Confirm Password"} onChangeText={(text) => {updatePasswordAgain(text)}} />
+          <Inputbox placeholder={"Confirm Password"} onChangeText={(text) => {updatePasswordAgain(text)}} secureTextEntry={true}/>
             <Loginbtn top ={true} innerText={"Register"} onPress={submit}/>
           </ScrollView>
         </View>

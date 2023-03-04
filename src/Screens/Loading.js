@@ -1,24 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheet,  Text, View, ImageBackground } from "react-native";
-import Loginbtn from "../components/loginbtn";
-import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const Profile = ({ navigation })=>{
+const LoadingPage = ()=>{
 
   return (
     <View style={styles.container}>
       <ImageBackground source={require('../../src/assets/images/landingBackground.jpg')}  style={styles.container}>
         <View style={styles.wrapper}>
           <View style={styles.upperHalf}>
-            <Text style={styles.UHtext}>Profile</Text>
+            <Text style={styles.UHtext}>Loading</Text>
           </View>
           <View style={styles.lowerHalf}>
-              <View>
-                <Loginbtn innerText={"Log Out"} onPress={async()=>{
-                  await AsyncStorage.removeItem("token");
-                  navigation.navigate("Landing");
-                }}/>
-              </View>
+            <View style={styles.btnbox}>
+
+            </View>
           </View>
         </View>
       </ImageBackground>
@@ -63,4 +58,4 @@ const styles = StyleSheet.create({
 
 })
 
-export default Profile;
+export default LoadingPage;
