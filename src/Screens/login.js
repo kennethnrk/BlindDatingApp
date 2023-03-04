@@ -13,7 +13,6 @@ const Login = ({ navigation }) => {
   const [token, setToken] =  useState('');
   const [loading, setLoading] = useState(true);
   useFocusEffect(() => {
-    console.log(token,loading);
     async function anyNameFunction() {
 
       let ab = await isLoggedIn();
