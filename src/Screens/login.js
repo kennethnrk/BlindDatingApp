@@ -80,7 +80,7 @@ const Login = ({ navigation }) => {
         await AsyncStorage.setItem("token", response.data);
         navigation.navigate("Home");
       } else {
-        console.log(response.message);
+        Alert.alert('Warning', "Invalid Login Details!");
       }
     } catch (error) {
       console.log(error.message);
@@ -93,7 +93,7 @@ const Login = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require("../../src/assets/images/landingBackground.jpg")} style={styles.container}>
+      <ImageBackground source={require("../../src/assets/images/love.webp")} style={styles.container}>
         <View style={styles.wrapper}>
           <View style={styles.upperHalf}>
             <Text style={styles.UHtext}>Login</Text>
