@@ -6,7 +6,7 @@ import Matched from "../components/Matched";
 const Match = ({navigation})=>{
 
   const [matching, setMatching] = useState(false);
-  const [matched, setMatched] = useState(true);
+  const [matched, setMatched] = useState(false);
 
   const startMatching = ()=>{
       setMatching(true);
