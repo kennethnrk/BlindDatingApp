@@ -3,7 +3,7 @@ import Icons from "react-native-vector-icons/Entypo";
 import Loginbtn from "./loginbtn";
 import React from "react";
 
-const ProfileComp = ({owner, logOutPress, startPress}) => {
+const ProfileComp = ({owner, logOutPress}) => {
   return (<View style={styles.bodyWrap}>
     <ScrollView>
       <Text style={styles.labelText}>Name</Text>
@@ -30,7 +30,7 @@ const ProfileComp = ({owner, logOutPress, startPress}) => {
         <Icons name="location-pin" color={"#f7456c"} size={35} />
         <Text style={[styles.labelText, { fontSize: 25, color: "#8f8f8f" }]}>Mumbai</Text>
       </View>
-      {!owner ? <Loginbtn top={true} innerText={"Start Chat"} onPress={startPress}/>: (<View><Loginbtn top={true} innerText={"Edit"} /><Loginbtn innerText={"Log Out"} onPress={logOutPress}/></View>)}
+      {!owner ? <Loginbtn top={true} innerText={"Start Chat"} />: (<View><Loginbtn top={true} innerText={"Edit"} /><Loginbtn innerText={"Log Out"} onPress={logOutPress}/></View>)}
 
     </ScrollView>
   </View>);

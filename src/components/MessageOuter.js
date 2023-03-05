@@ -6,7 +6,7 @@ import { StyleSheet, Text, View, ImageBackground, Pressable, Image } from "react
 const MessageOuter = ({navigator, uname, lastMessage, time, noUnreadMsgs })=>{
 
   return (
-    <Pressable style={styles.wrapper} onPress={()=>navigator.navigate("MyMessage")}>
+    <Pressable style={styles.wrapper} onPress={()=>navigator.navigate("MyMessage", {uname: uname})}>
 
       <View style={styles.leftSection}>
         <View style={styles.person}>
