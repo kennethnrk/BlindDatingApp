@@ -12,7 +12,6 @@ const MessageOuter = ({navigator, uname, lastMessage, time, noUnreadMsgs })=>{
         <View style={styles.person}>
             <Text style={{color: '#ffffff', fontSize:60}}>{uname.charAt(0)}</Text>
         </View>
-        {/*<Image source={require("../../src/assets/images/img.avif")} style={styles.profileImg}/>*/}
       </View>
       <View  style={styles.rightSection}>
         <View style={{flexDirection:'row'}}>
