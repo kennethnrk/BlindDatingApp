@@ -1,22 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet,  Text, View, ImageBackground } from "react-native";
+import MatchingButton from "../components/Matching";
+import Matched from "../components/Matched";
 
 const Match = ()=>{
 
-  return (
-    <View style={styles.container}>
-      <ImageBackground source={require('../../src/assets/images/love.webp')}  style={styles.container}>
-        <View style={styles.wrapper}>
-          <View style={styles.upperHalf}>
-            <Text style={styles.UHtext}>Start Matching</Text>
-          </View>
-          <View style={styles.lowerHalf}>
+  const [matching, setMatching] = useState(false);
+  const [matched, setMatched] = useState(false);
+
+  const startMatching = ()=>{
+      setMatching(true);
+      console.log(matching);
+  }
+  const stopMatching = ()=>{
+    setMatching(false);
+    console.log(matching);
+  }
+
+  if(matched){
+    return (
+      <Matched/>
+    );
+  }
+  else
+  {
+    return (
+      <View style={styles.container}>
+        <ImageBackground source={require('../../src/assets/images/love.webp')}  style={styles.container}>
+          <View style={styles.wrapper}>
+            <MatchingButton startMatching={startMatching} stopMatching={stopMatching} matching={matching}/>
 
           </View>
-        </View>
-      </ImageBackground>
-    </View>
-  );
+        </ImageBackground>
+      </View>
+    );
+  }
+
 }
 
 const styles = StyleSheet.create({
@@ -40,6 +59,7 @@ const styles = StyleSheet.create({
     padding: '10%',
   },
   wrapper:{
+    padding:'40%',
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
@@ -49,10 +69,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Tilt Neon',
     color: '#141857',
   },
-  btnbox:{
-    marginTop: '18%',
-
-  }
 
 })
 

@@ -5,15 +5,13 @@ const LoadingPage = ()=>{
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('../../src/assets/images/landingBackground.jpg')}  style={styles.container}>
+      <ImageBackground source={require('../../src/assets/images/love.webp')}  style={styles.container}>
         <View style={styles.wrapper}>
           <View style={styles.upperHalf}>
             <Text style={styles.UHtext}>Loading</Text>
           </View>
           <View style={styles.lowerHalf}>
-            <View style={styles.btnbox}>
 
-            </View>
           </View>
         </View>
       </ImageBackground>
@@ -51,10 +49,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Tilt Neon',
     color: '#141857',
   },
-  btnbox:{
-    marginTop: '18%',
-
-  }
 
 })
 
