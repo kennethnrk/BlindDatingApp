@@ -5,7 +5,7 @@ import fontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import Icons from "react-native-vector-icons/Entypo";
 import ProfileComp from "./ProfileComp";
 
-const Matched = ()=>{
+const Matched = ({startPress})=>{
   function reducer(currentState, action) {
 
     switch (action.type){
@@ -58,7 +58,7 @@ const Matched = ()=>{
         <View style={styles.topWrap}>
           <Text style={styles.UHtext}>You've Matched</Text>
         </View>
-        <ProfileComp owner={false}/>
+        <ProfileComp owner={false} startPress={startPress}/>
       </ImageBackground>
     </View>
   );
