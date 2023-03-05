@@ -89,15 +89,15 @@ const Register = ({navigation})=>{
       const email = state.email;
       const password = state.password;
       const phoneno = state.phone;
-      // const response = await registerAPI({
-      //   name,
-      //   email,
-      //   password,
-      //   phoneno
-      // });
-      // if(await response.success){
-      //   console.log(response)
-      // }
+      const response = await registerAPI({
+        name,
+        email,
+        password,
+        phoneno
+      });
+      if(await response.success){
+        console.log(response)
+      }
     }
 
 

@@ -6,24 +6,30 @@ import React from "react";
 const ProfileComp = ({owner, logOutPress, startPress}) => {
   return (<View style={styles.bodyWrap}>
     <ScrollView>
-      <Text style={styles.labelText}>Name</Text>
+      <Text style={styles.labelText}>Kenneth Rodrigues</Text>
       <View style={{ flexDirection: "row" }}>
-        <Text style={[styles.labelText, { fontSize: 22, flex: 1 }]}>Age</Text>
-        <Text style={[styles.labelText, { fontSize: 20, flex: 2 }]}>gender</Text>
+        <Text style={[styles.labelText, { fontSize: 22, flex: 1 }]}>19</Text>
+        <Text style={[styles.labelText, { fontSize: 20, flex: 2 }]}>Male</Text>
       </View>
 
       <View style={styles.bio}>
         <Text style={[styles.labelText, { fontSize: 25 }]}>Bio</Text>
         <Text style={[styles.labelText, { fontSize: 18, color: "#8f8f8f" }]}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sapien at consectetur sagittis. Sed et
-          interdum nulla. Vivamus ut vestibulum nisl.
+          A confident and headstrong leader
+          with great communication skills,
+          understanding of projects and
+          designing and artistic ability.
+          Seeking to implement unique and
+          innovative solutions.BTech In Computer Science and
+          Engineering •
+          Sardar Patel Institute of
+          Technology
         </Text>
       </View>
       <View style={styles.bio}>
         <Text style={[styles.labelText, { fontSize: 25 }]}>Interests</Text>
         <Text style={[styles.labelText, { fontSize: 18, color: "#8f8f8f" }]}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sapien at consectetur sagittis. Sed et
-          interdum nulla. Vivamus ut vestibulum nisl.
+          Dancing, Singing, Painting, Food
         </Text>
       </View>
       <View style={{ flexDirection: "row", alignContent: "center", padding: "5%", paddingBottom: 0 }}>
