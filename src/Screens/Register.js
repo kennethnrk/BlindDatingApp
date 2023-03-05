@@ -104,7 +104,7 @@ const Register = ({navigation})=>{
   }
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('../../src/assets/images/landingBackground.jpg')}  style={styles.container}>
+      <ImageBackground source={require('../../src/assets/images/love.webp')}  style={styles.container}>
         <View style={styles.topWrap}>
           <Text style={styles.UHtext}>Register</Text>
         </View>

@@ -4,7 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import MessageList from "./MessageList";
 import { NavigationContainer } from "@react-navigation/native";
 import chatHeader from "../components/Header";
-
+import MyMessage from "./myMessage";
 const Stack = createStackNavigator();
 
 const Chat = ()=>{
@@ -13,6 +13,7 @@ const Chat = ()=>{
     <NavigationContainer independent={true}>
       <Stack.Navigator initialRouteName={"MessageList"}>
         <Stack.Screen name="MessageList" component={MessageList} options={{header: chatHeader,headerLeft: ()=> null}} />
+        <Stack.Screen name="MyMessage" component={MyMessage} options={{header: ()=> null}} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
   UHtext:{
     fontSize: 68,
     fontFamily: 'Tilt Neon',
-    color: '#141857',
+    color: '#f7456c',
   },
   btnbox:{
     marginTop: '18%',

@@ -15,7 +15,7 @@ const Tab = createMaterialBottomTabNavigator();
 function Home() {
 
   return (
-    <Tab.Navigator  activeColor="#ffffff"  labeled={false} barStyle={{ backgroundColor: '#10215e', margin:0, padding:0}}  >
+    <Tab.Navigator  activeColor="#ffffff"  labeled={false} barStyle={{ backgroundColor: '#f7456c', margin:0, padding:0}}  >
       <Tab.Screen options={{
         tabBarIcon: ({ color }) => (
           <Icons name="user" color={color} size={28} />

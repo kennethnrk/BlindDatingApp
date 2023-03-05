@@ -5,10 +5,10 @@ const Loginbtn = ({ top , innerText, onPress, }) => {
   return (
     <Pressable style={({pressed}) => [
     styles.pble, top ? styles.top : styles.nottop,
-      {backgroundColor: pressed ? '#5685e0' : top ?  '#141857': "#ffffff"},
+      {backgroundColor: pressed ? '#f7a8ba' : top ?  '#f7456c': "#ffffff"},
     ]} onPress={onPress}>
 
-      <Text style={[styles.innatext, top ? { color: "#ffffff" } : { color: "#141857" }]}>{innerText}</Text>
+      <Text style={[styles.innatext, top ? { color: "#ffffff" } : { color: "#f7456c" }]}>{innerText}</Text>
     </Pressable>
   );
 };
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
       fontFamily: 'Tilt Warp',
     },
     top: {
-      backgroundColor: "#141857",
+      backgroundColor: "#f7456c",
     },
     nottop: {
       backgroundColor: "#ffffff",

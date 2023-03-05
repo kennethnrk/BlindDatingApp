@@ -7,7 +7,7 @@ const Profile = ({ navigation })=>{
 
   return (
     <View style={styles.container}>
-      <ImageBackground source={require('../../src/assets/images/landingBackground.jpg')}  style={styles.container}>
+      <ImageBackground source={require('../../src/assets/images/love.webp')}  style={styles.container}>
         <View style={styles.wrapper}>
           <View style={styles.upperHalf}>
             <Text style={styles.UHtext}>Profile</Text>
