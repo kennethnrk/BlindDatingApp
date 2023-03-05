@@ -3,23 +3,23 @@ import { StyleSheet,  Text, View, ImageBackground } from "react-native";
 import MatchingButton from "../components/Matching";
 import Matched from "../components/Matched";
 
-const Match = ()=>{
+const Match = ({navigation})=>{
 
   const [matching, setMatching] = useState(false);
-  const [matched, setMatched] = useState(false);
+  const [matched, setMatched] = useState(true);
 
   const startMatching = ()=>{
       setMatching(true);
-      console.log(matching);
   }
   const stopMatching = ()=>{
     setMatching(false);
-    console.log(matching);
   }
+  const uname = "Name";
 
   if(matched){
     return (
-      <Matched/>
+      <Matched startPress={    ()=>{ navigation.navigate("Chat",{uname:uname});}
+      }/>
     );
   }
   else
