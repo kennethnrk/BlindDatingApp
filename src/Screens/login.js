@@ -69,22 +69,26 @@ const Login = ({ navigation }) => {
       ))) {
       Alert.alert("Warning", "Invalid Details!!");
     }
-    const email = state.email;
-    const password = state.password;
-    try {
+    else
+    {
+      const email = state.email;
+      const password = state.password;
+      try {
 
-      e.preventDefault();
-      const response = await login({ email , password });
-      if (response.success) {
-        console.log(response.message);
-        await AsyncStorage.setItem("token", response.data);
-        navigation.navigate("Home");
-      } else {
-        Alert.alert('Warning', "Invalid Login Details!");
+        e.preventDefault();
+        const response = await login({ email , password });
+        if (response.success) {
+          console.log(response.message);
+          await AsyncStorage.setItem("token", response.data);
+          navigation.navigate("Home");
+        } else {
+          Alert.alert('Warning', "Invalid Login Details!");
+        }
+      } catch (error) {
+        console.log(error.message);
       }
-    } catch (error) {
-      console.log(error.message);
     }
+
   };
   if (loading){
     return (<LoadingPage/>)
